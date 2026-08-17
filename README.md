@@ -35,6 +35,10 @@
 - **BlueZ** (herramientas Bluetooth de Linux)
 - **Permisos de superusuario** (`sudo`) para acceder a Bluetooth
 
+# 3. Instala las dependencias
+pip install --upgrade pip
+pip install -r requirements.txt
+
 ### 📥 Paso a paso
 
 ```bash
