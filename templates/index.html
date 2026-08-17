@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Attacker - Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔴 BLUE ATTACKER</h1>
+            <span class="status-badge" id="statusBadge">⏹️ Detenido</span>
+        </header>
+        <div class="main-grid">
+            <div class="panel scan-panel">
+                <h2>📡 Escaneo</h2>
+                <div class="scan-controls">
+                    <button id="scanBtn" class="btn btn-primary">🔍 Escanear</button>
+                    <span id="scanTimeDisplay">5s</span>
+                </div>
+                <div id="deviceList" class="device-list">
+                    <p class="placeholder">Presiona "Escanear" para buscar dispositivos</p>
+                </div>
+                <div class="selected-target">
+                    <strong>Objetivo:</strong> <span id="targetDisplay">Ninguno</span>
+                </div>
+                <button id="clearTargetBtn" class="btn btn-secondary" style="display:none;">Limpiar objetivo</button>
+            </div>
+            <div class="panel control-panel">
+                <h2>⚙️ Configuración</h2>
+                <div class="config-form">
+                    <label>📦 Tamaño de paquete: <input type="number" id="packetSize" value="600" min="100" step="10"></label>
+                    <label>🧵 Hilos: <input type="number" id="threads" value="300" min="10" step="10"></label>
+                    <label>⏱️ Tiempo de escaneo (s): <input type="number" id="scanTime" value="5" min="2" step="1"></label>
+                    <button id="configBtn" class="btn btn-secondary">Guardar configuración</button>
+                </div>
+                <h2>🎯 Control de Ataque</h2>
+                <div class="attack-controls">
+                    <button id="startBtn" class="btn btn-danger">▶️ Iniciar Ataque</button>
+                    <button id="stopBtn" class="btn btn-secondary" disabled>⏹️ Detener Ataque</button>
+                </div>
+                <div id="attackStatus" class="attack-status">
+                    <span>Estado: <strong id="attackStatusText">Inactivo</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="panel logs-panel">
+            <h2>📋 Logs</h2>
+            <div id="logContainer" class="log-container">
+                <div class="log-entry system">Sistema listo. Esperando acciones...</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
