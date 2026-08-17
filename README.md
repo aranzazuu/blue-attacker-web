@@ -75,16 +75,6 @@ Abre tu navegador y ve a `http://127.0.0.1:5000`. La interfaz web estará lista 
 
 ---
 
-## 📸 Capturas de pantalla
-
-> *Añade aquí una captura de tu interfaz web en funcionamiento.*
-
-```text
-[Pendiente de añadir imagen]
-```
-
----
-
 ## 🧠 ¿Cómo funciona?
 
 - **Escaneo:** El backend ejecuta `bluetoothctl` en modo interactivo, activa el escaneo, espera unos segundos y luego lista los dispositivos detectados.
